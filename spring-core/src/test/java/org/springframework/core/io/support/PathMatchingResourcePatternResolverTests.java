@@ -59,7 +59,7 @@ public class PathMatchingResourcePatternResolverTests {
 
 	@Test(expected = FileNotFoundException.class)
 	public void invalidPrefixWithPatternElementInIt() throws IOException {
-		resolver.getResources("xx**:**/*.xy");
+		resolver.getResources("file:pom.xml");
 	}
 
 	@Test
@@ -153,5 +153,6 @@ public class PathMatchingResourcePatternResolverTests {
 		assertTrue(resource + " does not have a filename that matches any of the specified names",
 				Arrays.stream(filenames).anyMatch(filename::endsWith));
 	}
+
 
 }
